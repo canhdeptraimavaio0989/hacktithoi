@@ -20,7 +20,10 @@ local function grayOutMap()
     for _, child in pairs(workspace:GetChildren()) do
         -- Kiểm tra xem đối tượng có phải là Model hoặc BasePart không
         if child:IsA("Model") or child:IsA("BasePart") then
-            child.Color = Color3.new(0.5, 0.5, 0.5) -- Đặt màu thành xám
+            -- Kiểm tra nếu child.Color có thể được thay đổi
+            if child:IsA("BasePart") then
+                child.Color = Color3.new(0.5, 0.5, 0.5) -- Đặt màu thành xám
+            end
         end
     end
 end
