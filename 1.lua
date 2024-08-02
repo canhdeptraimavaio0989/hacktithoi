@@ -6,7 +6,7 @@ local function hideCharacterSkins(character)
         -- Kiểm tra xem đối tượng có phải là MeshPart không
         if child:IsA("MeshPart") then
             child.Transparency = 1 -- Đặt độ trong suốt thành 1
-        elseif child:IsA("Accessory") then
+        elseif child:IsA("Accessory") and child:FindFirstChild("Handle") then
             child.Handle.Transparency = 1 -- Đặt độ trong suốt cho Handle của phụ kiện
         end
     end
