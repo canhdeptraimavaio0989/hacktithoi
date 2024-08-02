@@ -19,9 +19,11 @@ local function hideMap()
         if child:IsA("Model") or child:IsA("BasePart") then
             child.Transparency = 1 -- Đặt độ trong suốt thành 1
             child.CanCollide = false -- Ngăn không cho va chạm
+            -- Nếu bạn muốn xóa hoàn toàn, hãy sử dụng: child:Destroy()
         end
     end
 end
+
 
 -- Xử lý khi người chơi mới vào game
 game.Players.PlayerAdded:Connect(function(player)
